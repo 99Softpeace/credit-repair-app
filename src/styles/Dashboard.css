@@ -1,0 +1,122 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex: 1;
+  height: 100vh;
+}
+
+.dashboard-title {
+  color: #333; /* Text color */
+  margin-bottom: 1rem; /* Space below the title */
+  font-weight: bold; /* Make the text bold */
+  position: relative;
+  bottom: 20px;
+}
+
+.dashboard-top {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  margin-bottom: 1rem; /* Space below the top section */
+  flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
+
+.dashboard-main {
+  display: flex;
+  justify-content: center; /* Center align the main content */
+  margin-top: 1rem; /* Space above the main section */
+  flex-grow: 1; /* Allow the main section to grow and take up available space */
+}
+
+.dashboard-item {
+  flex: 1; /* Allows each item to grow equally */
+  margin: 0 0.5rem; /* Horizontal spacing between items */
+  padding: 1rem; /* Inner padding for the items */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced out */
+}
+
+/* Optional: Adjust the layout of the dashboard item */
+.dashboard h2 {
+  font-size: 1.2rem; /* Larger font size for the heading */
+  color: #333; /* Dark color for visibility */
+  margin-bottom: 0.5rem; /* Space below the heading */
+}
+
+.dashboard p {
+  font-size: 1rem; /* Font size for the paragraph */
+  color: #666; /* Lighter color for the paragraph */
+  margin-bottom: 1.5rem; /* Space below the paragraph */
+}
+
+/* Additional styling for the buttons */
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* Blue background for buttons */
+  color: white; /* White text for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0.5rem; /* Reduce padding for smaller screens */
+    flex-direction: column; /* Ensure it stacks vertically */
+    align-items: center; /* Center align dashboard items */
+    width: fit-content;
+  }
+
+  .dashboard-top {
+    flex-direction: row; /* Keep items in a row for better use of space */
+    justify-content: space-between; /* Space items evenly */
+    width: 100%; /* Full width */
+    margin-bottom: 1rem; /* Space below the top section */
+  }
+
+  .dashboard-top-item {
+    flex: 1; /* Allow items to grow equally */
+    margin: 0 0.5rem; /* Margin between items */
+    padding: 1rem; /* Padding for each top item */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+    text-align: center; /* Center align text */
+  }
+
+  .dashboard-main {
+    flex-direction: column; /* Stack the main content vertically */
+    width: 100%; /* Full width */
+    align-items: stretch; /* Stretch items to fill available width */
+  }
+
+  .dashboard-item {
+    width: 90%; /* Allow margins on sides */
+    margin: 0.5rem auto; /* Center items */
+    padding: 1rem; /* Maintain padding */
+    border-radius: 8px; /* Keep rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+   
+  }
+
+  .dashboard h2 {
+    font-size: 1.5rem; /* Increase font size for headings */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 0.5rem; /* Space below the heading */
+  }
+
+  .dashboard p {
+    font-size: 0.9rem; /* Smaller font size for paragraphs */
+    text-align: center; /* Center align paragraphs for consistency */
+  }
+}

@@ -1,0 +1,125 @@
+/* Inquiries.css */
+
+.inquiries-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 40rem; /* Adjusted width for larger screens */
+    margin: 0 auto; /* Center the component */
+    position: relative;
+    top: 30rem; /* Adjust top positioning if necessary */
+    left: 23rem; /* Adjust left positioning if necessary */
+    color: #333;
+  }
+  
+  .inquiries-container h2 {
+    margin-bottom: 20px;
+    color: #333; /* Darker heading color */
+  }
+  
+  .inquiries-container h3 {
+    margin-top: 20px;
+    color: #555; /* Medium heading color */
+  }
+  
+  .inquiries-container .error-message {
+    color: red; /* Error message color */
+    margin-bottom: 10px;
+  }
+  
+  .inquiries-container form {
+    margin-bottom: 20px; /* Space below form */
+  }
+  
+  .inquiries-container label {
+    display: block; /* Block layout for labels */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold font for labels */
+  }
+  
+  .inquiries-container input[type="text"] {
+    width: 100%; /* Full width input */
+    padding: 8px; /* Padding inside input */
+    margin-bottom: 10px; /* Space below input */
+    border: 1px solid #ccc; /* Light border for input */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .inquiries-container button {
+    padding: 10px 15px; /* Padding for buttons */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .inquiries-container button:hover {
+    background-color: #0056b3; /* Darker on hover */
+  }
+  
+  .inquiries-container .inquiries-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* No padding */
+  }
+  
+  .inquiries-container .inquiry-item {
+    padding: 10px; /* Padding for inquiry items */
+    margin: 10px 0; /* Margin between items */
+    background-color: #fff; /* White background for items */
+    border: 1px solid #ddd; /* Light border around items */
+    border-radius: 4px; /* Rounded corners */
+    display: flex; /* Flex layout for item */
+    justify-content: space-between; /* Space between item content */
+    align-items: center; /* Center align items */
+  }
+  
+  .inquiries-container .update-status-button {
+    padding: 5px 10px; /* Padding for status button */
+    background-color: #28a745; /* Green button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .inquiries-container .update-status-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .inquiries-container {
+      padding: 15px; /* Reduce padding for smaller screens */
+      margin: 10px; /* Reduce margin for smaller screens */
+      width: 90%; /* Use a percentage width for mobile */
+      top: 20rem; /* Adjust top positioning for mobile */
+      left: 0; /* Center the container */
+    }
+  
+    .inquiries-container h2,
+    .inquiries-container h3 {
+      font-size: 1.5rem; /* Adjust heading sizes for better readability */
+    }
+  
+    .inquiries-container input[type="text"] {
+      padding: 10px; /* Increase padding for better touch targets */
+      font-size: 16px; /* Adjust font size for better readability */
+    }
+  
+    .inquiries-container button,
+    .inquiries-container .update-status-button {
+      width: 100%; /* Full width for buttons */
+      padding: 10px; /* Adjust padding for buttons */
+      font-size: 16px; /* Adjust font size for buttons */
+    }
+  
+    .inquiries-container .inquiry-item {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align items to the start */
+    }
+  }
+  

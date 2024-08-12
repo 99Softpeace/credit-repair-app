@@ -1,0 +1,125 @@
+/* src/styles/ClientManagement.css */
+
+.client-management {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    padding: 1rem;
+    border: 1px solid #ddd; /* Optional border for clarity */
+    color: #333;
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    background-color: aliceblue; /* Light background for items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 1rem 0; /* Add vertical spacing to separate from other dashboard components */
+    position: relative;
+    bottom: 20rem;
+}
+
+.client-management h2 {
+    margin-bottom: 1rem; /* Space below the heading */
+    color: #333; /* Dark color for headings */
+}
+
+/* Styles for Client Form */
+.client-form {
+    margin-bottom: 1rem; /* Space between components */
+    padding: 1rem;
+    border: 1px solid #ddd; /* Optional border for clarity */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    background-color: #fff; /* White background for components */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.client-form h3 {
+    margin-bottom: 1rem; /* Space below the heading */
+    color: #333; /* Dark color for headings */
+}
+
+.client-form label {
+    margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+.client-form input,
+.client-form textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 0.5rem; /* Inner padding for comfort */
+    margin: 0.5rem 0; /* Vertical spacing */
+    border: 1px solid #ccc; /* Light border for input fields */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+.client-form button {
+    padding: 0.5rem 1rem; /* Inner padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly rounded corners */
+    background-color: #007bff; /* Primary color for buttons */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.client-form button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Styles for Client Profile and Client Search */
+
+
+.client-search-heading {
+    margin-bottom: 0.5rem; /* Space below the heading */
+    color: #333; /* Dark color for the heading */
+    font-size: 1.5rem; /* Font size for the heading */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+/* Empty State Styles */
+.empty-state {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #999;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.pagination-controls {
+    margin-top: 20px;
+  }
+  
+  .pagination-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .pagination-controls .active {
+    font-weight: bold;
+    color: blue; /* Highlight active page */
+  }
+  
+/* Optional: Adjust for responsive design */
+@media (max-width: 768px) {
+    .client-management {
+        padding: 0.5rem; /* Less padding on smaller screens */
+    }
+
+    .client-management h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .client-form,
+    .client-profile,
+    .client-search {
+        margin-bottom: 0.5rem; /* Reduce spacing on smaller screens */
+    }
+}

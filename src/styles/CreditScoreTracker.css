@@ -1,0 +1,173 @@
+.credit-score-tracker {
+  color: black;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensure it takes the full height of its parent */
+  margin-right: 1rem; /* Optional: add some space to the right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.client-name {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure the charts section takes the full width */
+  margin-top: 20px; /* Space above the charts */
+  flex-grow: 1; /* Allow the charts section to grow and take up available space */
+}
+
+.chart {
+  flex: 1; /* Each chart takes equal space */
+  text-align: center;
+  margin: 0 10px; /* Space between charts */
+  min-height: 200px; /* Ensure each chart has a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  overflow: hidden; /* Prevent overflow */
+  border-radius: 10px; /* Round corners for a polished look */
+  background: rgba(255, 255, 255, 0.1); /* Light background for charts */
+}
+
+.chart img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.credit-score {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #77dc19, #e52e71);
+  -webkit-background-clip: text;
+  color: transparent;
+  flex-grow: 1; /* Allow the credit score to grow and take up available space */
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: center; /* Center the text horizontally */
+}
+
+.credit-scores {
+  font-family: sans-serif; /* Fixed syntax */
+}
+
+.on-time {
+  margin-top: 20px; /* Space between chart and on-time */
+  border-radius: 20px; /* Adjust border radius as needed */
+  width: 5rem;
+  padding: 0.9rem; /* Add padding for better appearance */
+  background: transparent; /* Set the background to transparent */
+  box-shadow: 0 0 10px rgba(210, 226, 105, 0.5), 
+              0 0 20px rgba(60, 112, 161, 0.5), 
+              0 0 30px rgba(20, 72, 229, 0.5);
+  position: relative; /* Make position relative for the pseudo-element */
+  left: 18rem;
+  bottom: 10rem;
+}
+
+.on-time::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit; /* Inherit border radius from parent */
+  background: linear-gradient(45deg, rgba(255, 0, 255, 0.5), rgba(0, 0, 255, 0.5)); /* Adjust gradient colors */
+  z-index: -1; /* Position it behind the text */
+  opacity: 0.7; /* Adjust opacity as needed */
+  filter: blur(8px); /* Add blur for glowing effect */
+}
+
+.recent-changes {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #0e0202; /* Consistent color for better visibility */
+  position: relative;
+  bottom: 2rem;
+  font-weight: 400;
+}
+
+.alerts {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #f00;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 5px; /* Rounded corners for alerts */
+}
+
+.alert {
+  color: #d8000c; /* Alert text color */
+  font-weight: bold;
+  margin: 5px 0; /* Space between alerts */
+}
+
+.score-image {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Space between scores */
+}
+
+.score-image img {
+  width: 50px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between image and score */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .credit-score-tracker {
+    padding: 15px;
+    margin-right: 0; /* Remove right margin on mobile */
+    margin-left: 3rem;
+  }
+
+  .client-name {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  .charts {
+    flex-direction: column; /* Stack charts vertically on small screens */
+  }
+
+  .chart {
+    min-height: 150px; /* Reduce minimum height for smaller screens */
+    margin: 10px 0; /* Space between stacked charts */
+  }
+
+  .credit-score {
+    font-size: 36px; /* Smaller font size for mobile */
+  }
+
+  .on-time {
+    left: 0; /* Reset positioning for mobile */
+    bottom: 0; /* Reset positioning for mobile */
+    width: auto; /* Allow width to adjust automatically */
+    padding: 0.5rem; /* Adjust padding for mobile */
+  }
+
+  .recent-changes {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .alerts {
+    font-size: 14px; /* Smaller font size for alerts */
+  }
+
+  .score-image {
+    flex-direction: column; /* Stack image and score on mobile */
+    align-items: center; /* Center items */
+  }
+
+  .score-image img {
+    margin-bottom: 5px; /* Space below image */
+  }
+}

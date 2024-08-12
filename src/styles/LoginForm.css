@@ -1,0 +1,80 @@
+/* LoginForm.css */
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Center vertically */
+  position: relative;
+  bottom: 1rem;
+}
+
+.login-form {
+  padding: 20px;
+  width: 300px; /* Set a fixed width for the form */
+  background-color: #fff; /* Optional: add background color for contrast */
+  border-radius: 8px; /* Optional: add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.login-input,
+.role-select {
+  padding: 10px;
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-input:focus,
+.role-select:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.login-button {
+  width: 100%; /* Full width for button */
+  padding: 10px;
+  background-color: #007bff; /* Blue background color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.login-button:active {
+  background-color: #004494; /* Even darker blue when clicked */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .login-form {
+    width: 90%; /* Use a percentage width for mobile */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .login-form h2 {
+    font-size: 1.5rem; /* Adjust heading size for better readability */
+  }
+
+  .login-input,
+  .role-select {
+    padding: 12px; /* Increase padding for better touch targets */
+    font-size: 18px; /* Increase font size for better readability */
+  }
+
+  .login-button {
+    padding: 12px; /* Increase padding for button */
+    font-size: 18px; /* Increase font size for button */
+  }
+}

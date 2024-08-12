@@ -1,0 +1,300 @@
+/* src/styles/TopBar.css */
+
+.top-bar {
+    width: calc(100% - 50px); /* Adjust for the sidebar width */
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: white; 
+    color: #1E1E1E;
+    position: fixed;
+    top: 0;
+    left: 50.9px; /* Adjust for the sidebar width */
+    z-index: 1000;
+}
+
+.top-bar-left,
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.top-bar-right .icon-button {
+    background-color: #e2e5eb;
+    color: #1E1E1E;
+    border-radius: 20px;
+    position: relative; /* Needed for absolute positioning of notification dot */
+}
+
+.notification-dot {
+    width: 6px; /* Size of the dot */
+    height: 6px; /* Size of the dot */
+    background-color: yellow; /* Dot color */
+    border-radius: 50%; /* Circular shape */
+    position: absolute; /* Positioning */
+    top: 10px; /* Adjust vertical position */
+    right: 62px; /* Adjust horizontal position */
+}
+
+.notification-text {
+    margin-left: 5px; /* Space between dot and text */
+    border-radius: 10px; /* Border radius for the text */
+    background-color: #e2e5eb; /* Background color */
+    padding: 2px 5px; /* Padding around the text */
+}
+
+.notification-container {
+    position: absolute; /* Changed to absolute to position it without affecting other elements */
+    top: 60px; /* Adjust this value to position it directly below the notification icon */
+    right: 350px; /* Align to the right */
+    background-color: white; /* Background color */
+    border: 1px solid #ccc; /* Light border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 1000; /* Above other content */
+    width: 200px; /* Width of the notification container */
+    max-height: 300px; /* Max height of the container */
+    overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.notification-item {
+    padding: 10px; /* Padding for each notification */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.notification-item:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+}
+
+/* Read and unread styles */
+.read {
+    color: #666; /* Color for read notifications */
+}
+
+.unread {
+    font-weight: bold; /* Bold for unread notifications */
+}
+
+.dropdown-button,
+.search-button,
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    color: black;
+}
+
+.dropdown-button {
+    font-size: 18px;
+}
+
+.dropdown-button .dropdown-icon {
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 13px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 315px;
+    height: 30px;
+    background-color: #e2e5eb;
+    border-radius: 50px;
+    padding: 5px 10px;
+    position: relative;
+    left: 400px;
+}
+
+.search-bar input {
+    background: none;
+    border: none;
+    color: #1E1E1E; /* Fixed color to be consistent */
+    outline: none;
+    padding: 5px;
+    width: 200px; /* Adjust the width as needed */
+    margin-left: 10px; /* Add margin to the right for spacing */
+}
+
+.search-bar input::placeholder {
+    color: grey; 
+    font-style: italic; /* Example style */
+    opacity: 1; 
+    position: relative;
+    left: 20px; 
+}
+
+.search-button .search-icon {
+    position: relative;
+    right: 226px;
+    top: 2px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically within the profile */
+    margin-left: 20px; /* Adjust margin as needed */
+}
+
+.profile-info {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-left: 10px; /* Space from previous element */
+    position: relative; /* Needed for dropdown positioning */
+}
+
+.profile-image {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 10px; /* Space between image and details */
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column; /* Stack name and email */
+    margin-right: 10px; /* Space between details and dropdown icon */
+    position: relative;
+}
+
+.profile-name {
+    font-weight: bold; /* Make the name bold */
+    text-decoration: none; /* Ensure no text decoration */
+}
+
+.profile-email {
+    font-size: 0.875rem; /* Smaller font size for email */
+    color: #666; /* Change color as needed */
+    line-height: 1; /* Adjust line height */
+    text-decoration: none; /* Remove default underline */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.profile-email:hover {
+    text-decoration: none; /* Ensure no text decoration on hover */
+    color: #000; /* Change color on hover */
+}
+
+.profile-dropdown-icon {
+    height: 13px; /* Adjust size */
+    width: 13px; /* Adjust size */
+    fill: #666; /* Default color */
+    cursor: pointer; /* Change cursor to pointer */
+    position: relative;
+    bottom: 8px;
+    right: 70px;
+}
+
+.profile-dropdown-menu {
+    position: absolute; /* Position relative to profile-info */
+    top: 100%; /* Position below profile-info */
+    right: 0; /* Align to the right edge of profile-info */
+    background-color: #f5f2f2; /* Background color */
+    border: 1px solid #ccc; /* Light border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 4px; /* Rounded corners */
+    overflow: hidden; /* Clip children */
+    z-index: 1000; /* Ensure dropdown is above other content */
+    width: 150px; /* Set a fixed width for consistency */
+}
+
+.dropdown-menu-item {
+    display: block; /* Make the label take the full width */
+    padding: 10px 15px; /* Add padding for better touch target */
+    font-size: 16px; /* Set font size */
+    color: #333; /* Dark text color for better readability */
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ced4da; /* Light border for a subtle outline */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    margin-bottom: 5px; /* Space between buttons */
+}
+
+.dropdown-menu-item:hover {
+    background-color: #e2e6ea; /* Slightly darker background on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect on hover */
+}
+
+.dropdown-menu-item:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add focus effect with blue outline */
+}
+
+.dropdown-menu-item:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last button */
+}
+
+/* Specific styles for the Delete Image button */
+.dropdown-menu-item.delete {
+    color: #ffffff; /* White text for delete button */
+    background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.dropdown-menu-item.delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.email-input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .top-bar {
+        left: 0; /* Full width on mobile */
+              width: 100%; /* Full width */
+    }
+
+    .top-bar-left,
+    .top-bar-right {
+        margin-right: 6px; /* Reduce margin on mobile */
+    }
+
+    .search-bar {
+        width: 100%; /* Full width on mobile */
+        left: 0; /* Reset left position */
+        margin: 0 10px; /* Add margin */
+    }
+
+    .search-bar input {
+        width: 80%; /* Adjust input width for mobile */
+    }
+
+    .profile-container {
+        margin-left: 10px; /* Reduce margin on mobile */
+    }
+
+    .notification-container {
+        right: 10px; /* Adjust right position */
+        width: 150px; /* Narrower width for mobile */
+    }
+
+    .notification-text,
+    .dropdown-button,
+    .search-button,
+    .icon-button {
+        font-size: 14px; /* Reduce font size for mobile */
+    }
+
+    .notification-dot {
+        width: 6px; /* Size of the dot */
+        height: 6px; /* Size of the dot */
+        background-color: yellow; /* Dot color */
+        border-radius: 50%; /* Circular shape */
+        position: relative; /* Positioning */
+        left: 10rem;
+    
+    }
+}

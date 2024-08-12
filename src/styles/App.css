@@ -1,0 +1,48 @@
+/* src/styles/App.css */
+
+body {
+  font-family: 'Inter', sans-serif; /* Font from white design */
+  background-color: #e2e5eb; /* Background from black design */
+  color: #FFFFFF; /* Text from black design */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  color: #FFFFFF; /* Primary text from black design */
+}
+
+.secondary-text {
+  color: #AAAAAA; /* Secondary text color */
+}
+
+.accent {
+  color: #FFC107; /* Accent color */
+}
+
+
+
+
+.main-content {
+  display: flex;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  margin-left: 40px; /* Adjust for the sidebar width */
+  padding-top: 60px; /* Padding to avoid overlapping with the fixed top bar */
+}
+
+
+
+
+.dashboard-meetings,
+.total-balance,
+.popular-campaigns {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+
+.campaign-overview {
+  flex: 2;
+}

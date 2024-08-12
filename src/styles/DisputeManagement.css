@@ -1,0 +1,100 @@
+.dispute-management-container {
+  padding: 20px;
+  background-color: aliceblue;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  max-width: 800px; /* Adjust width as needed */
+  display: flex; 
+  flex-direction: column; 
+  align-items: stretch; /* Ensure it fills available space */
+  position: relative;
+  top: 30rem; /* Adjust top positioning as needed */
+}
+
+.dispute-management-compliance-info {
+  margin-bottom: 20px;
+}
+
+.dispute-management-compliance-info h3,
+.dispute-management-compliance-info h4 {
+  color: #333;
+}
+
+.dispute-management-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dispute-management-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.dispute-management-resolve-button,
+.dispute-management-generate-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff; /* Blue button */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.dispute-management-resolve-button:hover,
+.dispute-management-generate-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.dispute-management-add-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #28a745; /* Green button */
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.dispute-management-add-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.act {
+  color: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dispute-management-container {
+    padding: 15px; /* Reduce padding for smaller screens */
+
+    width: 100%;
+    position: relative;
+    top: -2rem;
+    left: 5rem;
+  }
+
+  .dispute-management-item {
+    padding: 10px; /* Adjust padding for items */
+    margin-bottom: 8px; /* Adjust margin for items */
+  }
+
+  .dispute-management-resolve-button,
+  .dispute-management-generate-button,
+  .dispute-management-add-button {
+    padding: 8px 12px; /* Adjust button padding for smaller screens */
+    font-size: 14px; /* Adjust button font size */
+  }
+
+  .dispute-management-compliance-info h3,
+  .dispute-management-compliance-info h4 {
+    font-size: 1.2rem; /* Adjust heading size for better visibility */
+  }
+}

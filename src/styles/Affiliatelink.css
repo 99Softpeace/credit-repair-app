@@ -1,0 +1,92 @@
+.affiliate-link-container {
+  background: linear-gradient(150deg, #00f0ff, #b0e0e6, #ffffff); /* Neon sky blue, powder blue, and white */
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+  position: absolute;
+  right: -9rem;
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  width: 80%; /* Make the width responsive */
+  max-width: 300px; /* Set a max-width for larger screens */
+  transition: background 0.3s ease; /* Add hover effect transition */
+  height: 20rem;
+}
+
+.affiliate-link-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.affiliate-link-container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.affiliate-butt {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 28px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%; /* Center button alignment */
+}
+
+.affiliate-button:hover {
+  background-color: #45a049;
+}
+
+/* Accessibility improvement */
+.affiliate-button[aria-label] {
+  outline: none;
+}
+
+.copy-button {
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background-color: #218838;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .affiliate-link-container {
+    right: 0; /* Reset position for full width on mobile */
+    transform: translateX(0); /* Remove translate effect */
+    width: 90%; /* Increase width for mobile */
+    max-width: none; /* Remove max-width restriction */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 15px; /* Reduce padding on mobile */
+position: relative;
+left: 2rem;
+  }
+
+  .affiliate-link-container h2 {
+    font-size: 20px; /* Adjust font size for mobile */
+  }
+
+  .affiliate-link-container p {
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .affiliate-butt,
+  .copy-button {
+    font-size: 14px; /* Reduce button font size for mobile */
+    padding: 8px 15px; /* Reduce padding for buttons on mobile */
+    margin-top: 20px; /* Reduce margin on mobile */
+  }
+}

@@ -1,0 +1,79 @@
+/* src/styles/ClientList.css */
+
+.client-list-heading {
+    margin-bottom: 1rem; /* More space below the heading */
+    color: #333; /* Dark color for the heading */
+    font-size: 1.6rem; /* Slightly larger font size */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.client-list {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.client-list-item {
+    display: flex; /* Use flexbox for item layout */
+    justify-content: space-between; /* Space between the client details and the button */
+    align-items: center; /* Center items vertically */
+    padding: 0.75rem; /* Increased padding for better click area */
+    border: 1px solid #ddd; /* Border to separate items */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 0.75rem; /* Space between items */
+    background-color: #fff; /* White background for items */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.client-list-item:hover,
+.client-list-item:focus {
+    background-color: #f0f0f0; /* Light background on hover/focus */
+    outline: none; /* Remove default outline */
+    transform: translateY(-2px); /* Slight lift on hover for interaction */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.client-list-item span {
+    cursor: pointer; /* Pointer cursor to indicate clickable */
+    color: #007bff; /* Primary color for client names */
+    text-decoration: underline; /* Underline to indicate clickable text */
+}
+
+.client-list-item button {
+    background-color: #dc3545; /* Red background for delete button */
+    color: white; /* White text for the button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding for button */
+    cursor: pointer; /* Pointer cursor for button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.client-list-item button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.empty-state {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #999;
+}
+
+/* Optional: Responsive styles */
+@media (max-width: 600px) {
+    .client-list-heading {
+        font-size: 1.4rem; /* Adjust heading size */
+    }
+
+    .client-list-item {
+        padding: 0.5rem; /* Smaller padding for mobile */
+        flex-direction: column; /* Stack items for better mobile display */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .client-list-item button {
+        width: 100%; /* Full-width button on mobile */
+        margin-top: 0.5rem; /* Space above button */
+    }
+}
