@@ -73,10 +73,10 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .dispute-management-container {
-    width: 100%;
+    width: 80%;
     padding: 40px; /* Reduce padding for smaller screens */
     position: relative;
-    right: 10rem;
+    right: 8rem;
    top: 25rem;
   }
 
