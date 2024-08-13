@@ -124,11 +124,15 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+
   .credit-score-tracker {
-    padding: 15px;
-    margin-right: 0; /* Remove right margin on mobile */
-    margin-left: 3rem;
-  }
+    position: relative;
+    width: 80%;
+    margin: 0 auto; /* Centers the element */
+    overflow: hidden;
+}
+
+
 
   .client-name {
     font-size: 20px; /* Smaller font size for mobile */
@@ -147,11 +151,18 @@
     font-size: 36px; /* Smaller font size for mobile */
   }
 
+  .detail-link{
+    color: #221d1d;
+    text-decoration: none;
+    display: none;
+  }
   .on-time {
     left: 0; /* Reset positioning for mobile */
-    bottom: 0; /* Reset positioning for mobile */
-    width: auto; /* Allow width to adjust automatically */
+    bottom: 3rem; /* Reset positioning for mobile */
+    width: 4rem; /* Allow width to adjust automatically */
     padding: 0.5rem; /* Adjust padding for mobile */
+    position: relative;
+
   }
 
   .recent-changes {

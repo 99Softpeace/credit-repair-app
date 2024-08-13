@@ -1,7 +1,7 @@
 /* src/styles/TopBar.css */
 
 .top-bar {
-    width: calc(100% - 50px); /* Adjust for the sidebar width */
+    width: calc(100% - 50px); 
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -47,7 +47,7 @@
 }
 
 .notification-container {
-    position: absolute; /* Changed to absolute to position it without affecting other elements */
+    position: relative; /* Changed to absolute to position it without affecting other elements */
     top: 60px; /* Adjust this value to position it directly below the notification icon */
     right: 350px; /* Align to the right */
     background-color: white; /* Background color */
@@ -101,15 +101,14 @@
 }
 
 .search-bar {
-    display: flex;
-    align-items: center;
-    width: 315px;
+    width: 100%;
     height: 30px;
     background-color: #e2e5eb;
     border-radius: 50px;
     padding: 5px 10px;
     position: relative;
-    left: 400px;
+    left: 15rem;
+
 }
 
 .search-bar input {
@@ -132,8 +131,7 @@
 
 .search-button .search-icon {
     position: relative;
-    right: 226px;
-    top: 2px;
+   right: 14rem;
 }
 
 .profile-container {
@@ -250,42 +248,48 @@
     border-radius: 3px;
 }
 
-/* Mobile Responsiveness */
+
+
+/* Mobile view adjustments */
 @media (max-width: 768px) {
     .top-bar {
-        left: 0; /* Full width on mobile */
-              width: 100%; /* Full width */
+        width: 100%; /* Full width for mobile */
+        padding: 0 5px; /* Adjust padding */
+        left: 0; /* Align to the left edge */
     }
 
     .top-bar-left,
     .top-bar-right {
-        margin-right: 6px; /* Reduce margin on mobile */
+        margin-right: 10px; /* Reduce margin */
     }
 
     .search-bar {
-        width: 100%; /* Full width on mobile */
-        left: 0; /* Reset left position */
-        margin: 0 10px; /* Add margin */
+        width: 80%; /* Adjust width for mobile */
+        left: 0; /* Align to the left edge */
     }
 
     .search-bar input {
-        width: 80%; /* Adjust input width for mobile */
+        width: 100%; /* Full width input */
     }
 
     .profile-container {
-        margin-left: 10px; /* Reduce margin on mobile */
+        margin-left: 10px; /* Reduce margin */
     }
 
+    .profile-dropdown-menu {
+        width: 100%; /* Full width for dropdown */
+        right: 0; /* Align to the right edge */
+    }
+
+    .bell-icon {
+       position: relative;
+       top: 0.5rem;
+       right: 0.3rem;
+    }
     .notification-container {
-        right: 10px; /* Adjust right position */
-        width: 150px; /* Narrower width for mobile */
-    }
-
-    .notification-text,
-    .dropdown-button,
-    .search-button,
-    .icon-button {
-        font-size: 14px; /* Reduce font size for mobile */
+        display: flex;
+        width: 100%; /* Full width for notifications */
+        right: 0; /* Align to the right edge */
     }
 
     .notification-dot {
@@ -293,8 +297,38 @@
         height: 6px; /* Size of the dot */
         background-color: yellow; /* Dot color */
         border-radius: 50%; /* Circular shape */
-        position: relative; /* Positioning */
-        left: 10rem;
-    
+        position: absolute; /* Positioning */
+        top: 10px; /* Adjust vertical position */
+        right: 6px; /* Adjust horizontal position */
     }
+
+
+      .notification-text{
+        position: relative;
+        left: 3px;
+    
+
+    }
+
+
+
+    .dropdown-button,
+    .search-button,
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 3px;
+    margin-left: 8px;
+    color: black;
+}
+
+.arrow-icon{
+height: 8px;
+}
+
+
+
+
 }

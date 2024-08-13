@@ -63,7 +63,7 @@ const TopBar = () => {
                     </button>
                 </div>
                 <div className="search-bar">
-                    <input type="text" placeholder="Stom Campaign" className="search-input" />
+                    <input type="text" placeholder="Search" className="search-input" />
                     <button className="search-button">
                         <SearchIcon className="search-icon" />
                     </button>

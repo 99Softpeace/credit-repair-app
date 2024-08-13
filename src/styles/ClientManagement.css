@@ -111,6 +111,9 @@
 @media (max-width: 768px) {
     .client-management {
         padding: 0.5rem; /* Less padding on smaller screens */
+        position: relative;
+        top: 15em;
+        
     }
 
     .client-management h2 {

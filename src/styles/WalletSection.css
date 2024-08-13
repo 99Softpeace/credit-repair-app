@@ -61,8 +61,8 @@
         width: 90%; /* Full width for mobile */
         padding: 15px; /* Reduce padding for mobile */
         right: 0; /* Reset position for mobile */
-        bottom: 28rem; /* Adjust bottom position for mobile */
-        left: 5rem;
+        bottom: 35rem; /* Adjust bottom position for mobile */
+       
     }
 
     .wallet-section .balance {

@@ -73,12 +73,11 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .dispute-management-container {
-    padding: 15px; /* Reduce padding for smaller screens */
-
     width: 100%;
+    padding: 40px; /* Reduce padding for smaller screens */
     position: relative;
-    top: -2rem;
-    left: 5rem;
+    right: 10rem;
+   top: 25rem;
   }
 
   .dispute-management-item {
