@@ -1,51 +1,82 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; 
 import '../styles/DisputeManagement.css';
 
-const DisputeManagement = ({ disputes = [], onAddDispute }) => {
+const DisputeManagement = () => {
+  const [disputes, setDisputes] = useState([]);
   const [creditor, setCreditor] = useState('');
   const [reason, setReason] = useState('');
   const [complianceDocument, setComplianceDocument] = useState('');
   const [virtualMail, setVirtualMail] = useState(false);
   const [error, setError] = useState('');
 
-  const handleAddDispute = (e) => {
+  useEffect(() => {
+    const fetchDisputes = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/disputes/all');
+        setDisputes(response.data);
+      } catch (error) {
+        console.error('Error fetching disputes:', error);
+        setError('Failed to fetch disputes. Please try again later.');
+      }
+    };
+
+    fetchDisputes();
+  }, []);
+
+  const resetForm = () => {
+    setCreditor('');
+    setReason('');
+    setComplianceDocument('');
+    setVirtualMail(false);
+    setError('');
+  };
+
+  const handleAddDispute = async (e) => {
     e.preventDefault();
 
-    // Validate inputs
     if (!creditor || !reason) {
       setError('Creditor and reason are required.');
       return;
     }
 
-    // Create a new dispute object
     const newDispute = {
-      id: Date.now(),
       creditor,
       reason,
-      status: 'Pending',
       complianceDocument,
       virtualMail,
+      status: 'Pending',
     };
 
-    // Call the onAddDispute function to update the disputes state in App.js
-    onAddDispute(newDispute);
-
-    // Clear the form fields
-    setCreditor('');
-    setReason('');
-    setComplianceDocument('');
-    setVirtualMail(false);
-    setError(''); // Clear any previous error messages
+    try {
+      const response = await axios.post('http://localhost:5000/api/disputes/create', newDispute);
+      setDisputes([...disputes, response.data.dispute]);
+      resetForm();
+    } catch (error) {
+      console.error('Error creating dispute:', error);
+      setError('Failed to add dispute. Please try again later.');
+    }
   };
 
-  const handleUpdateStatus = (id) => {
-    const updatedDisputes = disputes.map((dispute) =>
-      dispute.id === id ? { ...dispute, status: 'Resolved' } : dispute
-    );
+  const handleUpdateStatus = async (id) => {
+    if (!id) {
+      console.error('Invalid dispute ID:', id);
+      setError('Invalid dispute ID. Please try again.');
+      return;
+    }
 
-    // Update the disputes in App.js by calling onAddDispute with the updated list
-    onAddDispute(updatedDisputes);
+    try {
+      await axios.patch(`http://localhost:5000/api/disputes/update/${id}`, { status: 'Resolved' });
+      
+      const updatedDisputes = disputes.map((dispute) =>
+        dispute.id === id ? { ...dispute, status: 'Resolved' } : dispute
+      );
+
+      setDisputes(updatedDisputes);
+    } catch (error) {
+      console.error('Error updating dispute status:', error);
+      setError('Failed to update dispute status. Please try again later.');
+    }
   };
 
   const generateDisputeLetter = (dispute) => {
@@ -53,13 +84,13 @@ const DisputeManagement = ({ disputes = [], onAddDispute }) => {
       [Your Name]
       [Your Address]
       [City, State, Zip]
-      [Date]
+      ${new Date().toLocaleDateString()}
 
-      [Creditor Name]
+      ${dispute.creditor}
       [Creditor Address]
       [City, State, Zip]
 
-      Dear [Creditor],
+      Dear ${dispute.creditor},
 
       I am writing to dispute the following information in my credit report:
       Creditor: ${dispute.creditor}
@@ -74,18 +105,20 @@ const DisputeManagement = ({ disputes = [], onAddDispute }) => {
       [Your Name]
     `;
 
-    console.log(letter); // Simulate letter generation
-    alert('Dispute letter generated. Check the console for details.');
+    const blob = new Blob([letter], { type: 'text/plain;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'DisputeLetter.txt';
+    link.click();
   };
 
   return (
     <div className="dispute-management-container">
       <h2>Dispute Management</h2>
 
-      {/* Add Dispute Form */}
       <form onSubmit={handleAddDispute}>
         <h3>Add Dispute</h3>
-        {error && <p className="error-message">{error}</p>} {/* Display error message if any */}
+        {error && <p className="error-message">{error}</p>}
         <div>
           <label htmlFor="creditor">Creditor:</label>
           <input
@@ -129,7 +162,6 @@ const DisputeManagement = ({ disputes = [], onAddDispute }) => {
         <button type="submit">Submit</button>
       </form>
 
-      {/* Active Disputes List */}
       <h3 className="act">Active Disputes</h3>
       <ul className="dispute-management-list">
         {disputes.length > 0 ? (
@@ -155,17 +187,11 @@ const DisputeManagement = ({ disputes = [], onAddDispute }) => {
             </li>
           ))
         ) : (
-          <li>No active disputes.</li> // Display when no disputes are available
+          <li>No active disputes.</li>
         )}
       </ul>
     </div>
   );
-};
-
-// Prop validation
-DisputeManagement.propTypes = {
-  disputes: PropTypes.array.isRequired,
-  onAddDispute: PropTypes.func.isRequired,
 };
 
 export default DisputeManagement;
