@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 import '../styles/DisputeManagement.css';
 
 const DisputeManagement = () => {
@@ -58,7 +58,7 @@ const DisputeManagement = () => {
     }
   };
 
-  const handleUpdateStatus = async (id) => {
+  const handleUpdateStatus = async (id, status) => {
     if (!id) {
       console.error('Invalid dispute ID:', id);
       setError('Invalid dispute ID. Please try again.');
@@ -66,10 +66,10 @@ const DisputeManagement = () => {
     }
 
     try {
-      await axios.patch(`http://localhost:5000/api/disputes/update/${id}`, { status: 'Resolved' });
+      await axios.patch(`http://localhost:5000/api/disputes/update/${id}`, { status });
       
       const updatedDisputes = disputes.map((dispute) =>
-        dispute.id === id ? { ...dispute, status: 'Resolved' } : dispute
+        dispute.id === id ? { ...dispute, status } : dispute
       );
 
       setDisputes(updatedDisputes);
@@ -79,37 +79,25 @@ const DisputeManagement = () => {
     }
   };
 
-  const generateDisputeLetter = (dispute) => {
-    const letter = `
-      [Your Name]
-      [Your Address]
-      [City, State, Zip]
-      ${new Date().toLocaleDateString()}
+  const handleGenerateLetter = async (dispute) => {
+    if (!dispute.id) {
+      console.error('Invalid dispute ID:', dispute.id);
+      setError('Invalid dispute ID. Please try again.');
+      return;
+    }
 
-      ${dispute.creditor}
-      [Creditor Address]
-      [City, State, Zip]
-
-      Dear ${dispute.creditor},
-
-      I am writing to dispute the following information in my credit report:
-      Creditor: ${dispute.creditor}
-      Reason: ${dispute.reason}
-
-      Under the Fair Credit Reporting Act (FCRA), I have the right to dispute inaccuracies in my credit report. 
-      Please investigate this matter and provide me with the results of your investigation.
-
-      Thank you for your attention to this matter.
-
-      Sincerely,
-      [Your Name]
-    `;
-
-    const blob = new Blob([letter], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'DisputeLetter.txt';
-    link.click();
+    try {
+      const response = await axios.post(`http://localhost:5000/api/disputes/generateLetter/${dispute.id}`);
+      if (response.data.success) {
+        // Provide feedback to the user, e.g., a success message
+        alert('Dispute letter has been successfully sent.');
+      } else {
+        setError('Failed to generate dispute letter. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error generating dispute letter:', error);
+      setError('Failed to generate dispute letter. Please try again later.');
+    }
   };
 
   return (
@@ -172,14 +160,20 @@ const DisputeManagement = () => {
                 <strong>Reason:</strong> {dispute.reason} <br />
                 <strong>Status:</strong> {dispute.status}
               </div>
+              <div>
+                <label>Status:</label>
+                <select
+                  value={dispute.status}
+                  onChange={(e) => handleUpdateStatus(dispute.id, e.target.value)}
+                >
+                  <option value="Pending">Pending</option>
+                  <option value="Under Review">Under Review</option>
+                  <option value="Submitted">Submitted</option>
+                  <option value="Resolved">Resolved</option>
+                </select>
+              </div>
               <button
-                onClick={() => handleUpdateStatus(dispute.id)}
-                className="dispute-management-resolve-button"
-              >
-                Resolve
-              </button>
-              <button
-                onClick={() => generateDisputeLetter(dispute)}
+                onClick={() => handleGenerateLetter(dispute)}
                 className="dispute-management-generate-button"
               >
                 Generate Letter

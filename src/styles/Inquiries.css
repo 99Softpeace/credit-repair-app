@@ -8,8 +8,8 @@
     width: 40rem; /* Adjusted width for larger screens */
     margin: 0 auto; /* Center the component */
     position: relative;
-    top: 39rem; /* Adjust top positioning if necessary */
-left: 45rem;
+    left: 45rem;
+    top: 5rem;
     color: #333;
   }
   

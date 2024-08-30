@@ -1,15 +1,15 @@
 .wallet-section {
     padding: 20px;
     width: 30rem; /* Fixed width for larger screens */
+    height: 26rem;
     background-color: aliceblue; 
     color: black;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
-    bottom: 60rem;
     right: 14rem;
-    max-height: 400px; /* Set a max height for the wallet section */
-    overflow: auto; /* Allow scrolling if content overflows */
+    bottom: 59rem;
+
 }
 
 .wallet-section h3 {

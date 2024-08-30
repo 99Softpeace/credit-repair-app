@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* Ensure it takes the full height of its parent */
+  height: 55rem; /* Ensure it takes the full height of its parent */
   margin-right: 1rem; /* Optional: add some space to the right */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
